@@ -47,7 +47,7 @@ if __name__ == "__main__":
     
     #model = torch.hub.load('path/to/yolov5', 'custom', path='path/to/best.pt', source='local')  # local repo repositorio local para cargar todo el local
     model = torch.hub.load(
-        'ultralytics/yolov5', 'custom', path='C:/Users/Mota/Documents/GitHub/yolov5-flask/50best1508.pt', force_reload=True, autoshape=True
+        'ultralytics/yolov5', 'custom', path='50best1508.pt', force_reload=True, autoshape=True
        
         #"ultralytics/yolov5", "yolov5", pretrained=True, force_reload=True, autoshape=True
        
