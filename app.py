@@ -43,5 +43,5 @@ def predict():
         full_filename = os.path.join(app.config['RESULT_FOLDER'], 'results0.jpg')
         return redirect('static/image0.jpg')
     return render_template('index.html')
-    # app.run()
-app.run(host="0.0.0.0", port=args.port)      
+app.run()
+#app.run(host="0.0.0.0", port=args.port)      
