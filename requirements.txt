@@ -1,7 +1,8 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 Flask==2.1.2
 numpy>=1.21.6
 scikit-learn==1.0.2
 gunicorn==19.9.0
 pillow==8.4.0
-torch>=1.7.0
-torchvision>=0.8.1
+torch==1.6.0+cpu
+torchvision==0.7.0+cpu
