@@ -16,8 +16,8 @@ app.config['RESULT_FOLDER'] = RESULT_FOLDER
 #parser.add_argument("--port", default=5000, type=int, help="port number")
 #args = parser.parse_args()
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best1508.pt', force_reload=True, autoshape=True)
-#model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best1508.pt', force_reload=True).autoshape()
+#model = torch.hub.load('ultralytics/yolov5', 'custom', path='50best1508.pt', force_reload=True, autoshape=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best1508.pt', force_reload=True).autoshape()
 model.eval()
 
 def get_prediction(img_bytes):
