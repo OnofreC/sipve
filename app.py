@@ -16,7 +16,7 @@ app.config['RESULT_FOLDER'] = RESULT_FOLDER
 #parser.add_argument("--port", default=5000, type=int, help="port number")
 #args = parser.parse_args()
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best1508.pt', force_reload=True, autoshape=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best2109yolov5s.pt', force_reload=True, autoshape=True)
 #model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best1508.pt', force_reload=True).autoshape()
 model.eval()
 
@@ -30,7 +30,7 @@ def get_prediction(img_bytes):
 @app.route("/opencam", methods=['GET'])
 def opencam():
     print("here")
-    subprocess.run(['python', 'detect.py', '--weights','50best1508.pt', '--source', '0'],shell=True)
+    subprocess.run(['python', 'detect.py', '--weights','50best2109yolov5s.pt', '--source', '0'],shell=True)
     return "done"
     
 
