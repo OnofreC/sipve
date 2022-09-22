@@ -1,1 +1,1 @@
-web: gunicorn app:app --port 5000
+web: gunicorn app:app 
