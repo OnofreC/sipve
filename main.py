@@ -53,4 +53,4 @@ def predict():
         return redirect('static/image0.jpg')
     return render_template('index.html')
 #app.run()
-app.run(host="0.0.0.0", port=args.port)      
+#app.run(host="0.0.0.0", port=args.port)      
