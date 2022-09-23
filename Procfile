@@ -1,1 +1,1 @@
-web: gunicorn --bind :8000 wsgi:app
+web: gunicorn wsgi:app  port:8080
