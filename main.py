@@ -1,7 +1,7 @@
 import io
 import os
 import json
-
+import argparse
 from PIL import Image
 import subprocess
 
@@ -12,6 +12,10 @@ app = Flask(__name__)
 
 RESULT_FOLDER = os.path.join('static')
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
+parser = argparse.ArgumentParser(description="Flask app exposing yolov5 models")
+parser.add_argument("--port", default=5000, type=int, help="port number")
+args = parser.parse_args()
+
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best2109yolov5s.pt', force_reload=True, autoshape=True)
 #model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best1508.pt', force_reload=True).autoshape()
@@ -49,5 +53,7 @@ def predict():
         full_filename = os.path.join(app.config['RESULT_FOLDER'], 'results0.jpg')
         return redirect('static/image0.jpg')
     return render_template('index.html')
+if __name__ == "__main__":
+        app.run(host="0.0.0.0", port=args.port)    
 #app.run()
 #app.run(host="0.0.0.0", port=args.port)      
