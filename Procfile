@@ -1,1 +1,1 @@
-echo web: gunicorn wsgi:app >Procfile
+web: gunicorn wsgi:app port8000
