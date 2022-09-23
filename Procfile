@@ -1,1 +1,1 @@
-web: gunicorn -h wsgi:app 
+echo web: gunicorn wsgi:app >Procfile
