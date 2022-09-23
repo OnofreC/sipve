@@ -12,9 +12,9 @@ app = Flask(__name__)
 
 RESULT_FOLDER = os.path.join('static')
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
-parser = argparse.ArgumentParser(description="Flask app exposing yolov5 models")
-parser.add_argument("--port", default=5000, type=int, help="port number")
-args = parser.parse_args()
+#parser = argparse.ArgumentParser(description="Flask app exposing yolov5 models")
+#parser.add_argument("--port", default=5000, type=int, help="port number")
+#args = parser.parse_args()
 
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='static/50best2109yolov5s.pt', force_reload=True, autoshape=True)
@@ -54,6 +54,6 @@ def predict():
         return redirect('static/image0.jpg')
     return render_template('index.html')
 if __name__ == "__main__":
-        app.run(host="0.0.0.0", port=args.port)    
+        app.run(port=5000)    
 #app.run()
 #app.run(host="0.0.0.0", port=args.port)      
