@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app  port:8080
+web: gunicorn -h wsgi:app 
